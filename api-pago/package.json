@@ -1,0 +1,19 @@
+{
+  "name": "api-pago",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "start": "react-scripts start"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mysql": "^2.18.1"
+  }
+}

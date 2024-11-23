@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horror Times</title>
+    <!-- Enlaza tu hoja de estilo principal -->
+    <link rel="stylesheet" href="Styles.css">
+    <!-- Enlaza la fuente Lato de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Enlaza Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlaza Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1 class="page-title">Horror Times</h1> <!-- Nombre de la página con animación -->
+       <!-- Barra de Búsqueda -->
+    <div class="search-box">
+        <input type="text" id="search-txt" class="search-txt" placeholder="Busca tu peli de horror favorita">
+        <a href="#" class="search-btn" onclick="buscar()"> <!-- Ejecuta la función buscar() en JS -->
+            <i class="fas fa-search"></i>
+        </a>
+    </div>
+    
+    <div id="resultados"></div> <!-- Donde se mostrarán los resultados o mensajes -->
+
+
+        <div class="buttons">
+            <a href="Products.html" class="neon-btn">Productos</a>
+            <a href="Carrito.html" class="neon-btn">Carrito</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="galery">
+            <div style="background-image: url(imagenes/galeria-1.jpg);"></div>
+            <div style="background-image: url(imagenes/galeria-2.webp);"></div>
+            <div style="background-image: url(imagenes/galeria-3.jpg);"></div>
+            <div style="background-image: url(imagenes/galeria-5.jpg);"></div>
+        </div>
+        <div class="galery2">
+            <div style="background-image: url(imagenes/Boysl.jpg);"></div>
+            <div style="background-image: url(imagenes/Amitiville.jpg);"></div>
+            <div style="background-image: url(imagenes/losextraños.webp);"></div>
+            <div style="background-image: url(imagenes/demonnight.jpg);"></div>
+        </div>
+    </section>
+
+    <main>
+        <div class="content">
+            <div class="content__container">
+                <p class="content__container__text">Bienvenido al lugar donde</p>
+                <ul class="content__container__list">
+                    <li class="content__container__list__item">las pesadillas aparecen</li>
+                    <li class="content__container__list__item">la esperanza desaparece</li>
+                    <li class="content__container__list__item">tus miedos toman el control</li>
+                    <li class="content__container__list__item">el horror es lo mejor</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="card">
+                <h2>Hannibal</h2>
+                <p>Un maniático caníbal, pero elegante y manipulador</p>
+                <span>Producto limitado</span>
+                <div class="pic" style="background-image: url('imagenes/hannibal.jpg');"></div>
+                <button> <a class="pago" href="formulariopago.html" style="color: rgb(0, 0, 0);">Comprar</a></button>
+            </div>
+            <div class="card card2">
+                <h2>Candyman</h2>
+                <p>Un ente sediento de sangre por culpa de la sociedad</p>
+                <span>Producto limitado</span>
+                <div class="pic" style="background-image: url('imagenes/candyman.jpg');"></div>
+                <button> <a class="pago" href="formulariopago.html" style="color: rgb(0, 0, 0);">Comprar</a></button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card card3">
+                <h2>See no evil</h2>
+                <p>Un asesino sádico y trastornado por su crianza</p>
+                <span>Producto limitado</span>
+                <div class="pic" style="background-image: url('imagenes/seenoevil.jpg');"></div>
+                <button> <a class="pago" href="formulariopago.html" style="color: rgb(0, 0, 0);">Comprar</a></button>
+            </div>
+            <div class="card card4">
+                <h2>Llamada perdida</h2>
+                <p>Un ser maligno en busca de venganza, pero ¿cómo sonará tu muerte?</p>
+                <span>Producto limitado</span>
+                <div class="pic" style="background-image: url('imagenes/lostcall.jpg');"></div>
+                <button> <a class="pago" href="formulario_pago.html" style="color: rgb(0, 0, 0);">Comprar</a></button>
+            </div>
+        </div>
+    </main>
+    
+    <div class="icons">
+        <a href="#" class="icon">
+            <div class="layer">
+                <span class="fab fa-telegram" aria-label="Telegram"></span>
+            </div>
+            <div class="text">Telegram</div>
+        </a>
+        <a href="#" class="icon">
+            <div class="layer">
+                <span class="fab fa-whatsapp" aria-label="WhatsApp"></span>
+            </div>
+            <div class="text">WhatsApp</div>
+        </a>
+        <a href="#" class="icon">
+            <div class="layer">
+                <span class="fab fa-instagram" aria-label="Instagram"></span>
+            </div>
+            <div class="text">Instagram</div>
+        </a>
+        <a href="#" class="icon">
+            <div class="layer">
+                <span class="fab fa-twitter-square" aria-label="Twitter"></span>
+            </div>
+            <div class="text">Twitter</div>
+        </a>
+        <a href="#" class="icon">
+            <div class="layer">
+                <span class="fab fa-facebook" aria-label="Facebook"></span>
+            </div>
+            <div class="text">Facebook</div>
+        </a>
+    </div>
+
+    <section>
+        <div class="txt-animated">
+            <h1>¿Donde encontrarnos?</h2>
+        </div>
+        <div class="neon-background">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7005331800824!2d-74.10449382440957!3d4.64740394211601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b954c7ea505%3A0xd28c94814b1d1633!2sCentro%20Comercial%20Gran%20Estaci%C3%B3n!5e0!3m2!1sen!2sco!4v1721004757962!5m2!1sen!2sco" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script src="server.js"></script>
+    
+    
+
+</body>
+<footer class="horario">
+    <div class="horario-info container">
+        <h2>Horario</h2>
+        <div class="horario-txt">
+            <div class="txt">
+                <h4>Dirección</h4>
+                <p>Cra 30 #10095</p>
+                <p>Centro comercial Gran Estacion</p>
+            </div>
+            <div class="txt">
+                <h4>Horario</h4>
+                <p>24/7 porque el horror no descansa</p>
+                <p>incluyendo tus pesadillas</p>
+            </div>
+            <div class="txt">
+                <h4>Teléfono</h4>
+                <p>Para contactarse con un asesor: 353 8988</p>
+                <p>Para validar o algún EA (Evento adverso): 237 7749</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

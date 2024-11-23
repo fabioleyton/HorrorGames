@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="Products.css"> <!-- Asegúrate de que la ruta sea correcta -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+    <header>
+        <h1 class="nuestros-productos">Nuestros Productos</h1>
+
+        <div class="buttons">
+            <a href="Index.html" class="neon-btn">Regresar</a>
+            <a href="Carrito.html" class="neon-btn">Carrito</a>
+        </div>
+    </header>
+    <div class="product-container">
+        <div class="product-card">
+            <img src="imagenes/Product_1.jpg" alt="Producto 1">
+            <h2>Producto 1</h2>
+            <p>Descripción del producto 1</p>
+            <a href="#" class="btn-buy">Comprar</a>
+        </div>
+        <div class="product-card">
+            <img src="imagenes/Product_2+.jpg" alt="Producto 2">
+            <h2>Producto 2</h2>
+            <p>Descripción del producto 2</p>
+            <a href="#" class="btn-buy">Comprar</a>
+        </div>
+        <div class="product-card">
+            <img src="imagenes/Product_3.jpg" alt="Producto 3">
+            <h2>Producto 3</h2>
+            <p>Descripción del producto 3</p>
+            <a href="#" class="btn-buy">Comprar</a>
+        </div>
+        <div class="product-card">
+            <img src="imagenes/Product_4.jpg" alt="Producto 4">
+            <h2>Producto 4</h2>
+            <p>Descripción del producto 4</p>
+            <a href="#" class="btn-buy">Comprar</a>
+        </div>
+        <div class="product-card">
+            <img src="imagenes/Product_5.jpg" alt="Producto 5">
+            <h2>Producto 5</h2>
+            <p>Descripción del producto 5</p>
+            <a href="#" class="btn-buy">Comprar</a>
+        </div>
+        <div class="product-card">
+            <img src="imagenes/Product_6.webp" alt="Producto 6">
+            <h2>Producto 6</h2>
+            <p>Descripción del producto 6</p>
+            <a href="#" class="btn-buy">Comprar</a>
+        </div>
+        <div class="product-card">
+            <img src="imagenes/Product_7.webp" alt="Producto 7">
+            <h2>Producto 7</h2>
+            <p>Descripción del producto 7</p>
+            <a href="#" class="btn-buy">Comprar</a>
+        </div>
+        <div class="product-card">
+            <img src="imagenes/Product_10.webp" alt="Producto 8">
+            <h2>Producto 8</h2>
+            <p>Descripción del producto 8</p>
+            <a href="#" class="btn-buy">Comprar</a>
+        </div>
+        <div class="product-card">
+            <img src="imagenes/Product_9.jpg" alt="Producto 9">
+            <h2>Producto 9</h2>
+            <p>Descripción del producto 9</p>
+            <a href="#" class="btn-buy">Comprar</a>
+        </div>
+    </div>
+    <h1 class="nuestros-productos">Productos populares</h1>
+
+    <main id="main" class="gallery-container">
+        <video autoplay muted loop class="background-video">
+            <source src="fondo animado/fondo_1.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item"><img src="imagenes/lostcall.jpg" alt="Imagen 1"></div>
+                <div class="carousel-item"><img src="imagenes/Product_2+.jpg" alt="Imagen 2"></div>
+                <div class="carousel-item"><img src="imagenes/losextraños.webp" alt="Imagen 3"></div>
+                <div class="carousel-item"><img src="imagenes/Product_10.webp" alt="Imagen 4"></div>
+                <div class="carousel-item"><img src="imagenes/Product_6.webp" alt="Imagen 5"></div>
+                <div class="carousel-item"><img src="imagenes/Product_9.jpg" alt="Imagen 6"></div>
+                <div class="carousel-item"><img src="imagenes/Amitiville.jpg" alt="Imagen 7"></div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <div class="info-container">
+            <h2 id="product-title">Título del Producto</h2>
+            <p id="product-description">Descripción del producto aparecerá aquí.</p>
+            <button class="comprar-btn">Comprar</button>
+        </div>
+    </main>
+    
+    
+    
+    
+    
+    <script src="server.js"></script>
+    <script src="app.js"></script>
+    <script src="Script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/api.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,682 @@
+@import url('https://fonts.googleapis.com/css2?family=Magnificent:wght@400;700&display=swap');
+
+/* Estilo general */
+body {
+    background: linear-gradient(to left bottom, rgb(0, 0, 0), rgb(28, 25, 23), rgb(0, 0, 0));
+    font-family: 'sans-serif'; /* Fuente general de la página */
+    color: lightgray;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Estilo del título de la página con animación */
+.page-title {
+    font-size: clamp(30px, 5vw, 40px); /* Tamaño adaptable según el ancho de la ventana */
+    color: transparent;
+    background-image: linear-gradient(90deg, rgba(255, 0, 0, 1), rgba(128, 128, 128, 1)); /* Rojo a gris */
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 10px rgba(128, 0, 0, 0.8), 0 0 20px rgba(64, 64, 64, 0.8); /* Rojo oscuro y gris oscuro */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-style: italic;
+    font-family: 'Magnificent', cursive; /* Fuente elegante y cursiva */
+    animation: neonAnimation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonAnimation {
+    from {
+        text-shadow: 0 0 10px rgba(128, 0, 0, 0.8), 0 0 20px rgba(64, 64, 64, 0.8); /* Rojo oscuro y gris oscuro */
+    }
+    to {
+        text-shadow: 0 0 20px rgba(128, 0, 0, 1), 0 0 30px rgba(64, 64, 64, 1); /* Rojo más intenso y gris más oscuro */
+    }
+}
+
+
+/* Barra de búsqueda */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    z-index: 999;
+}
+
+.search-box {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: none;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px rgba(182, 23, 23, 0.952); 
+    border-radius: 50px;
+}
+
+.search-txt {
+    position: absolute;
+    right: 50px;
+    width: 0;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0 10px;
+    color: #ec0000;
+    font-size: 18px;
+    transition: width 0.5s ease;
+    text-shadow: 0 0 5px #710c04, 0 0 10px #bb0502;
+}
+
+.search-box:hover {
+    width: 300px; 
+    box-shadow: 0 0 20px  rgba(255, 0, 0, 1), 0 0 15px rgba(182, 23, 23, 0.952); 
+    transition: all 0.5s ease; /* Asegúrate de que la sombra tenga la misma duración */
+}
+
+.search-box:hover .search-txt {
+    width: 240px; 
+}
+
+.search-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background:   rgba(255, 0, 0, 1), 0 0 15px rgba(182, 23, 23, 0.952);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0 5px #bb0502; 
+}
+
+.search-btn i {
+    font-size: 24px;
+    color: #bb0502;
+}
+
+.search-btn:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 1), 0 0 15px rgba(182, 23, 23, 0.952);
+}
+
+
+/* Animación y estilo de los botones */
+.buttons {
+    display: flex;
+    gap: 20px;
+    position: fixed;
+    right: 50px;
+    top: 20px;
+}
+
+.neon-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none; /* Elimina el subrayado */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 1); /* Efecto de neón */
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .neon-btn:hover {
+    background-color: #333;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Intensifica el efecto de neón al pasar el cursor */
+  }
+
+
+.neon-btn::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgb(175, 6, 6), rgba(182, 23, 23, 0.952));
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.neon-btn:active {
+    transform: scale(0.9) rotate(3deg);
+    background: radial-gradient(circle,rgb(175, 6, 6), rgba(173, 7, 7, 0.952));
+    transition: 0.5s;
+}
+
+/* Estilo y animación de la galería */
+section {
+    margin-top: 150px;
+}
+
+.galery {
+    margin-left: 50px;
+    display: flex;
+    height: 15rem;
+    gap: 0.25rem;
+    margin-right: 200px;
+}
+
+.galery > div {
+    flex: 1;
+    border-radius: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);
+}
+
+.galery > div:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 20px rgba(173, 7, 7, 0.952); 
+    z-index: 1;
+}
+
+.galery2 {
+    margin-left: 50px;
+    margin-top: 50px;
+    display: flex;
+    height: 15rem;
+    gap: 0.25rem;
+    margin-right: 200px;
+}
+
+.galery2 > div {
+    flex: 1;
+    border-radius: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);
+}
+
+.galery2 > div:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 20px rgba(173, 7, 7, 0.952); 
+    z-index: 1;
+}
+
+/* Animación de los iconos */
+.icons {
+    position: fixed;
+    top: 120px; /* Ajusta la posición de los iconos sociales */
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icons a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.layer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 55px;
+    border: 2px solid #b90505;
+    border-radius: 5px;
+    transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative;
+}
+
+.layer span {
+    font-size: 30px;
+    line-height: 55px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.icon:hover .layer {
+    transform: rotate(-35deg) skew(20deg);
+    box-shadow: 0 0 15px 5px rgba(173, 7, 7, 0.952);
+    border-color: currentColor;
+}
+
+/* Colores específicos de los iconos */
+.icon .fa-whatsapp {
+    color: #b90505;
+}
+
+.icon .fa-instagram {
+    color: #b90505;
+}
+
+.icon .fa-twitter-square {
+    color: #b90505;
+}
+
+.icon .fa-facebook {
+    color: #b90505;
+}
+
+.icon .fa-telegram {
+    color: #b90505;
+}
+
+/*modificacion del texto con animacion*/
+
+.content {
+    margin-top: 20px; /* Ajustamos para que no se superponga con la galería */
+    position: relative; /* Cambiamos a relative para evitar que quede encima de otros elementos */
+    height: 160px;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    line-height: 40px;
+    color: #710c04;
+  }
+  
+  .content__container {
+    font-weight: 600;
+    height: 40px;
+    padding: 0 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .content__container__text {
+    display: inline;
+    margin: 0;
+    font-size: 35px;
+  }
+  
+  .content__container__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .content__container__list__item {
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+    font-size: 35px;
+    font-weight: 600;
+    color: #ecf0f1;
+    white-space: nowrap;
+    text-shadow: 0 0 10px rgba(173, 7, 7, 0.952); /* Ajusta la sombra para mayor claridad */
+  }
+  
+  @keyframes fadeInOut {
+    0%, 20% { opacity: 0; }
+    30%, 50% { opacity: 1; }
+    60%, 80% { opacity: 0; }
+    90%, 100% { opacity: 0; }
+  }
+  
+  .content__container__list__item:nth-child(1) {
+    animation: fadeInOut 12s infinite;
+    animation-delay: 0s;
+    margin-left: 50px;
+  }
+  
+  .content__container__list__item:nth-child(2) {
+    animation: fadeInOut 12s infinite;
+    animation-delay: 3s;
+    margin-left: 50px;
+  }
+  
+  .content__container__list__item:nth-child(3) {
+    animation: fadeInOut 12s infinite;
+    animation-delay: 6s;
+    margin-left: 100px;
+  }
+  
+  .content__container__list__item:nth-child(4) {
+    animation: fadeInOut 12s infinite;
+    animation-delay: 9s;
+    margin-left: -10px;
+  }
+  
+  
+/*informacion de el segundo apartado de elementos ilimitados*/
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Ajustamos para que se formen dos filas */
+}
+
+.container .card {
+    position: relative;
+    width: 500px;
+    height: 230px;
+    padding: 15px;
+    background: linear-gradient(60deg, #151516 0%, #1d2229 100%);
+    overflow: hidden;
+    margin: 15px; /* Agregamos un margen para separar las cartas */
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.container .card h2 {
+    z-index: 99;
+    position: absolute;
+    bottom: 25px;
+    right: 130px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.3s ease;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.container .card p {
+    z-index: 99;
+    position: absolute;
+    bottom: 30px;
+    right: 130px;
+    width: 150px;
+    color: #fff;
+    opacity: 0;
+    font-size: 12px;
+    text-align: right;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.container .card span {
+    z-index: 99;
+    position: absolute;
+    top: 60px;
+    right: 35px;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+    writing-mode: vertical-lr;
+    transition: 0.3s ease;
+    opacity: 0.7;
+}
+
+.container .card .pic {
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    filter: grayscale(100%);
+    transition: 0.3s ease;
+}
+
+.container .card button {
+    position: absolute;
+    right: 30px;
+    bottom: 40px;
+    width: 30px;
+    height: 30px;
+    background-color: #900603;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    opacity: 1;
+    transition: 0.3s ease;
+}
+
+.container .card:hover button {
+    transform: scale(16.5);
+    opacity: 0.5;
+}
+
+.container .card:hover h2 {
+    bottom: 80px;
+    right: 50px;
+}
+
+.container .card:hover p {
+    opacity: 1;
+    right: 60px;
+}
+
+.container .card:hover span {
+    opacity: 0;
+    top: 80px;
+}
+
+.container .card:hover .pic {
+    filter: grayscale(0);
+}
+
+/* Especificamos las imágenes para cada card */
+.container .card:nth-child(1) .pic {
+    background-image: url('imagenes/hannibal.jpg');
+}
+
+.container .card:nth-child(2) .pic {
+    background-image: url('imagenes/candyman.jpg');
+}
+
+.container .card:nth-child(3) .pic {
+    background-image: url('imagenes/jason.jpg');
+}
+
+.container .card:nth-child(4) .pic {
+    background-image: url('imagenes/freddy.jpg');
+}
+
+.container .card2 button {
+    background-color: #900603;
+}
+
+.container .card3 button {
+    background-color: #900603;
+}
+
+/* Ajustes específicos para la sección maps */
+.neon-background {
+    width: 99.1%;
+    position: relative;
+    display: inline-block;
+    padding: 5px; /* Margen más fino */
+    border-radius: 10px; /* Bordes redondeados para el contenedor */
+    box-shadow: 0 0 15px rgba(233, 7, 7, 0.952); /* Sombra neón */
+    overflow: hidden; /* Asegura que el gradiente no se extienda fuera del contenedor */
+}
+
+.neon-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #710c04, #151516, #710c04, #151516);
+    background-size: 400% 400%;
+    animation: gradient-flow 6s ease infinite;
+    z-index: -1;
+}
+
+.map {
+    border-radius: 10px; /* Bordes redondeados para el iframe */
+    filter: grayscale(100%) invert(92%) contrast(93%); /* Aplicar filtro oscuro al mapa */
+}
+
+/* Animación de gradiente fluido */
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Contenedor del texto */
+.txt-animated {
+    position: relative;
+    display: inline-block;
+    font-family: 'Sans-serif';
+    font-style: italic;
+}
+
+/* Texto */
+.txt-animated h1 {
+    font-size: 5rem;
+    font-weight: 500;
+    color: #900603;
+    letter-spacing: 3px;
+    margin: 0;
+    text-shadow: 0 0 10px #1d2229;
+    animation: text-fade 3s ease-in-out infinite, border-flow 5s linear infinite;
+}
+
+/* Animaciones */
+@keyframes text-fade {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes border-flow {
+    0% {
+        color: #900603;
+    }
+    25% {
+        color: #710c04;
+    }
+    50% {
+        color: #333;
+    }
+    75% {
+        color: #1d2229;
+    }
+    100% {
+        color: #b30000;
+    }
+}
+
+/*horario*/
+.horario {
+    padding: 100px 0px;
+    background: linear-gradient(to left bottom, rgb(0, 0, 0), rgb(28, 25, 23), rgb(0, 0, 0));;
+}
+
+.horario-info h2 {
+    font-size: 75px;
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
+    text-shadow: 0 0 10px #860e05;
+    animation: title-fade 3s ease-in-out infinite;
+}
+
+.horario-txt {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.txt {
+    color: #ffffff;
+    flex: 1;
+    padding: 0 20px;
+    animation: text-fade 3s ease-in-out infinite, border-flow 5s linear infinite;
+}
+
+.txt h4 {
+    font-size: 24px;
+    color: #a7a7a7;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #710c04, 0 0 20px #710c04, 0 0 30px #710c04, 0 0 40px #710c04, 0 0 50px #710c04;
+    animation: neon-glow 2s ease-in-out infinite alternate;
+}
+
+.txt p {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #a7a7a7;
+    text-shadow: 0 0 5px #710c04, 0 0 10px #710c04, 0 0 20px #710c04;
+    animation: neon-flicker 3s ease-in-out infinite alternate;
+}
+
+@keyframes text-fade {
+    0%, 100% {
+        color: #800e06; /* Rojo */
+    }
+    50% {
+        color: #bb0502; /* Rojo claro */
+    }
+}
+
+@keyframes title-fade {
+    0%, 100% {
+        color: #800e06; /* Rojo */
+    }
+    50% {
+        color: #bb0502; /* Rojo claro */
+    }
+}
+
+@keyframes neon-glow {
+    0% {
+        text-shadow: 0 0 10px #800e06, 0 0 20px #b30000, 0 0 30px #800e06, 0 0 40px #b30000, 0 0 50px #800e06;
+        color: #800e06; /* Rojo oscuro */
+    }
+    100% {
+        text-shadow: 0 0 20px #800e06, 0 0 40px #b30000, 0 0 60px #800e06, 0 0 80px #b30000, 0 0 100px #800e06;
+        color: #800e06; /* Rojo medio */
+    }
+}
+
+@keyframes neon-flicker {
+    0% {
+        text-shadow: 0 0 5px #800e06, 0 0 10px #b30000, 0 0 20px #800e06;
+        color: #b30000; /* Rojo oscuro */
+    }
+    50% {
+        text-shadow: 0 0 15px #800e06, 0 0 30px #b30000, 0 0 50px #800e06;
+        color: #cc3333; /* Rojo medio */
+    }
+    100% {
+        text-shadow: 0 0 5px #800e06, 0 0 10px #b30000, 0 0 20px #800e06;
+        color: #b30000; /* Rojo oscuro */
+    }
+}
